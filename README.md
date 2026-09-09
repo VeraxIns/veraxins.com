@@ -30,6 +30,24 @@ would be a worse misrepresentation than what was already rejected.
 GitHub Pages resolves extensionless paths, so `veraxins.com/sms-consent` returns 200
 directly with no redirect. That is the URL cited in `message_flow`; keep the filename.
 
+### The sample messages on this page are not decoration
+
+Round 4 of the campaign was rejected with 30886 (USE_CASE_DESCRIPTION) + 30893
+(SAMPLE_MESSAGE_2): the description promised "no marketing" while sample 2 was a
+back-in-stock ticket announcement. This page carried **the same two samples**, and it is
+the URL a reviewer follows out of `message_flow` and out of the toll-free submission's
+`OptInImageUrls`. Fixing the campaign alone would have left the finding sitting on the
+page it points at.
+
+So the samples here are kept identical to `MESSAGE_SAMPLES` in `scripts/twilio_a2p.py`,
+which are real output from `lib/jobrunner.py` and `jobs/position_check.py`. **If you change
+one, change the other.** Same for the program description: page, campaign description and
+toll-free `UseCaseSummary` all have to describe one program in the same words, because
+"the submission disagrees with itself" is the finding that has now cost four rounds.
+
+The page also lists both sending numbers -- the long code and the toll-free -- since two
+registrations are in flight and a reviewer of either should find their own number here.
+
 ## Deploy
 
 Push to the `main` branch of the GitHub repo; Pages serves it. Custom domain is set in the

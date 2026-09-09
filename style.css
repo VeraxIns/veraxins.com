@@ -33,3 +33,19 @@ footer {
   color: var(--muted);
 }
 footer a { color: var(--muted); margin-right: 1rem; }
+
+/* sms-consent.html: the recipient roster and the verbatim consent statement. Kept here
+   rather than inline so the three pages stay visually identical. */
+table { border-collapse: collapse; width: 100%; margin: .75rem 0; font-size: .95rem; }
+th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+blockquote.consent {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--accent);
+  background: #faf7f7;
+}
+blockquote.consent p { margin: 0; }
+ol { padding-left: 1.2rem; }
+ol li { margin-bottom: .5rem; }
+code { font: .92em/1.4 ui-monospace, Consolas, monospace; background: #f3f4f6; padding: .1em .3em; border-radius: 3px; }

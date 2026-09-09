@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS Consent and Opt-In &mdash; Verax Insurance Consulting, LLC</title>
+<meta name="description" content="How consent is obtained for the Verax Insurance Consulting SMS notification program: the complete recipient list, the enrollment procedure, and the verbatim consent statement.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logo.jpeg">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.jpeg" alt="Verax logo">
+    <div class="name"><a href="/">Verax Insurance Consulting, LLC</a></div>
+  </header>
+
+  <h1>SMS Consent and Opt-In</h1>
+  <p class="muted">Effective September 9, 2026</p>
+
+  <p>This page documents, in full, how consent is obtained for the Verax Insurance
+  Consulting SMS notification program, so that it can be verified rather than taken on
+  trust.</p>
+
+  <p><strong>There is deliberately no sign-up form on this page.</strong> That is not an
+  omission. This program has no public enrollment, and a form would misrepresent how
+  consent is actually collected. Everything below is the real mechanism.</p>
+
+  <h2>What this program is</h2>
+  <p><strong>Program name:</strong> Verax Insurance Consulting Alerts.<br>
+  <strong>Sending number:</strong> +1 727-353-5900.<br>
+  <strong>Operated by:</strong> Verax Insurance Consulting, LLC (sole proprietor: Tim
+  Kane), PO Box 297, St. Petersburg, FL 33731.</p>
+
+  <p>Tim Kane, the firm's principal, runs a personal-assistant automation for himself. It
+  watches his calendar, his mail and a small set of monitoring jobs, and it sends
+  operational alerts when something needs attention. Most of those alerts go by email and
+  Telegram. SMS is used only for the few that must interrupt &mdash; a scheduled job that
+  failed, an appointment about to be missed, a time-limited window opening.</p>
+
+  <p>These messages are automated operational notifications. They are not marketing.
+  Nothing is advertised, sold or offered in them.</p>
+
+  <h2>Who receives messages</h2>
+  <p>This is the complete recipient list as of the effective date above.</p>
+
+  <table>
+    <tr>
+      <th>Recipient</th>
+      <th>Relationship</th>
+      <th>Enrolled</th>
+    </tr>
+    <tr>
+      <td>Tim Kane</td>
+      <td>Principal of Verax Insurance Consulting; owner and operator of the automation;
+      holder of the Twilio account and of the sending number</td>
+      <td>At setup &mdash; his own mobile number, in his own system</td>
+    </tr>
+    <tr>
+      <td>Tommy Bayot</td>
+      <td>Tim Kane's partner; receives the household and travel alerts</td>
+      <td>September 6, 2026</td>
+    </tr>
+  </table>
+
+  <p>That is the entire list. There are two recipients, and there has never been a third.</p>
+
+  <p>There is no public sign-up because there is no public. This program does not solicit
+  phone numbers, does not accept them through any web form, does not buy, rent or import
+  lists, and is not offered to clients, prospects, or anyone who contacts Verax. A person
+  who is not personally known to Tim Kane cannot be enrolled by any means.</p>
+
+  <h2>How a person is enrolled</h2>
+  <p>Enrollment is manual and has four steps. A reviewer can follow them exactly as
+  written.</p>
+
+  <ol>
+    <li><strong>The prospective recipient reads this page.</strong> It is the program
+    disclosure: purpose, frequency, cost, opt-out, and what becomes of their number.</li>
+
+    <li><strong>They give Tim Kane their explicit agreement, in person</strong>, in the
+    words set out under &ldquo;The consent statement&rdquo; below. The request originates
+    with them. Tim does not enroll anyone who has not asked him to.</li>
+
+    <li><strong>Tim Kane then edits the alert system's recipient configuration by hand</strong>
+    and types the number in. That list is a literal two-entry constant in the source file
+    <code>lib/alerts.py</code> on his own machine. It is not a database, there is no import
+    path, and no API call, web request or inbound message can add to it. Adding a recipient
+    requires a deliberate code change that only Tim can make.</li>
+
+    <li><strong>The new recipient receives one confirmation message:</strong>
+    &ldquo;You are now receiving alerts from Tim Kane's assistant. Reply STOP to opt out,
+    HELP for help.&rdquo;</li>
+  </ol>
+
+  <p>Removal is the same procedure in reverse, and it also happens without Tim: replying
+  STOP opts the number out at the carrier level regardless of what the configuration file
+  says.</p>
+
+  <h2>The consent statement</h2>
+  <p>This is the exact wording each recipient agrees to at step 2. It is reproduced here in
+  full so that this page <em>is</em> the consent artifact rather than a description of
+  one.</p>
+
+  <blockquote class="consent">
+    <p>&ldquo;I have read the Verax Insurance Consulting SMS disclosure at
+    veraxins.com/sms-consent. I am asking Tim Kane to send automated alerts from his
+    assistant system to my mobile number. I understand that these are operational
+    notifications and not marketing; that the frequency is typically a few messages per
+    week, and more during an active alert; that message and data rates may apply; and that
+    my consent is not a condition of any purchase or of any service Verax provides. I
+    understand that I can stop the messages at any time by replying STOP, and get help by
+    replying HELP.&rdquo;</p>
+  </blockquote>
+
+  <p>Tim Kane records the date of that agreement next to the number in the configuration,
+  and in the recipient table above.</p>
+
+  <h2>Program disclosures</h2>
+  <ul>
+    <li><strong>Purpose:</strong> automated operational alerts &mdash; reminders,
+    monitoring alerts and job status &mdash; from Tim Kane's personal-assistant
+    automation, operated by Verax Insurance Consulting, LLC.</li>
+    <li><strong>Message frequency:</strong> a few messages per week, more during an active
+    alert.</li>
+    <li><strong>Message and data rates may apply.</strong> Check with your mobile carrier
+    for the details of your plan.</li>
+    <li><strong>Consent is not a condition of any purchase.</strong> Verax sells consulting
+    services. This program is not part of them, is not offered to clients, and no
+    engagement, purchase or payment is or ever will be conditioned on agreeing to receive
+    text messages.</li>
+    <li><strong>Opt out:</strong> reply <strong>STOP</strong> to any message to cancel.
+    CANCEL, QUIT, END, UNSUBSCRIBE, OPTOUT, STOPALL and REVOKE also work. You will get a
+    single confirmation and no further texts.</li>
+    <li><strong>Help:</strong> reply <strong>HELP</strong> or INFO to any message, email
+    <a href="mailto:notices@veraxins.com">notices@veraxins.com</a>, or call
+    727-353-5900.</li>
+    <li><strong>Carriers:</strong> mobile carriers are not liable for delayed or
+    undelivered messages.</li>
+  </ul>
+
+  <h2>Your mobile information</h2>
+  <p><strong>No mobile information will be shared with third parties or affiliates for
+  marketing or promotional purposes.</strong> Numbers are never sold, rented or traded. The
+  only third parties that ever see a recipient's number are Twilio, the messaging provider
+  that transmits the message on our behalf, and its carrier partners &mdash; which is
+  unavoidable in delivering an SMS. Full detail is in the
+  <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>Sample messages</h2>
+  <ul>
+    <li>&ldquo;Samwise: Monday to-do is in your email and Telegram. Reply STOP to opt
+    out.&rdquo;</li>
+    <li>&ldquo;Samwise: Oct 2 Halloween party tickets are AVAILABLE now &mdash; check
+    email/Telegram for the link. Reply STOP to opt out.&rdquo;</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <address>
+    Verax Insurance Consulting, LLC<br>
+    Tim Kane, Principal<br>
+    <a href="mailto:notices@veraxins.com">notices@veraxins.com</a><br>
+    727-353-5900<br>
+    PO Box 297, St. Petersburg, FL 33731
+  </address>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <div>&copy; Verax Insurance Consulting, LLC</div>
+  </footer>
+</div>
+</body>
+</html>

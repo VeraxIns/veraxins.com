@@ -19,16 +19,35 @@ entered his own number"). Reviewers read an assertion they cannot check as "no o
 mechanism exists". Twilio's own guidance for 30896/30917 is that when opt-in is not a
 public web form, the flow has to be **evidenced at a publicly reachable URL**.
 
-So this page is the evidence: the complete two-person recipient roster, the four-step
-manual enrollment procedure written so a reviewer can follow it, and the **verbatim
-consent statement** each recipient agrees to. The page IS the artifact rather than a
-description of one.
+So this page is the evidence: the enrollment procedure written so a reviewer can follow
+it, the **verbatim consent statement** each recipient agrees to, and a description of the
+consent record kept for each person. The page IS the artifact rather than a description of
+one.
 
 Deliberately **no sign-up form** -- there is no public enrollment, and inventing a form
 would be a worse misrepresentation than what was already rejected.
 
 GitHub Pages resolves extensionless paths, so `veraxins.com/sms-consent` returns 200
 directly with no redirect. That is the URL cited in `message_flow`; keep the filename.
+
+### Roles, not names -- rewritten 2026-09-09
+
+The first version of this page published a two-row recipient table and the sentence
+"there are two recipients, and there has never been a third." **Both were false.** An
+elderly family member was already receiving automated calls from the same number, and the
+intended roster is five people. A carrier reviewer who checked would have found a
+disclosure that did not match the system, which is the same class of defect that had
+already caused five rejections.
+
+The rewrite describes the roster **by role** and publishes the mechanism instead of the
+people. That is a deliberate choice, not a hedge: naming a private individual and her
+phone number on a public page in order to prove she consented is a worse outcome than any
+carrier form is worth. What is published is checkable -- the categories, the five-step
+procedure, the consent statement, and the fields of the consent record. What is withheld is
+only the identities.
+
+If a reviewer asks for the records themselves, they are retained and can be produced. Do
+not resolve that request by publishing them here.
 
 ### The sample messages on this page are not decoration
 
@@ -40,13 +59,15 @@ the URL a reviewer follows out of `message_flow` and out of the toll-free submis
 page it points at.
 
 So the samples here are kept identical to `MESSAGE_SAMPLES` in `scripts/twilio_a2p.py`,
-which are real output from `lib/jobrunner.py` and `jobs/position_check.py`. **If you change
-one, change the other.** Same for the program description: page, campaign description and
+which are **built** from `lib/alerts.py` and the real format strings in `jobs/sweep.py`,
+`jobs/position_check.py` and `jobs/mom_reminders.py` rather than retyped. **If you change
+one, change the other.** Same for the program description: page, campaign `Description` and
 toll-free `UseCaseSummary` all have to describe one program in the same words, because
-"the submission disagrees with itself" is the finding that has now cost four rounds.
+"the submission disagrees with itself" is the finding that has now cost five rounds.
 
-The page also lists both sending numbers -- the long code and the toll-free -- since two
-registrations are in flight and a reviewer of either should find their own number here.
+The page lists all three numbers -- the 10DLC sender, the toll-free, and the voice line
+that also answers inbound STOP and HELP -- since a reviewer of either registration should
+find their own number here.
 
 ## Deploy
 

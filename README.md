@@ -61,13 +61,18 @@ page it points at.
 So the samples here are kept identical to `MESSAGE_SAMPLES` in `scripts/twilio_a2p.py`,
 which are **built** from `lib/alerts.py` and the real format strings in `jobs/sweep.py`,
 `jobs/position_check.py` and `jobs/mom_reminders.py` rather than retyped. **If you change
-one, change the other.** Same for the program description: page, campaign `Description` and
-toll-free `UseCaseSummary` all have to describe one program in the same words, because
-"the submission disagrees with itself" is the finding that has now cost five rounds.
+one, change the other.** Same for the program description: page and campaign `Description`
+(and, until its number was released, the toll-free `UseCaseSummary`) have to describe one
+program in the same words, because "the submission disagrees with itself" is the finding
+that has now cost five rounds.
 
-The page lists all three numbers -- the 10DLC sender, the toll-free, and the voice line
-that also answers inbound STOP and HELP -- since a reviewer of either registration should
-find their own number here.
+The page lists both numbers -- the 10DLC sender and the voice line that also answers
+inbound STOP and HELP -- since a reviewer should find the number they are reviewing here.
+
+It listed a third, the toll-free +1 844-991-6652, until that number was released on
+2026-09-10 (redundant once texting went live on 10DLC). A released number is reassigned to
+a stranger, so it must never reappear on this page: someone following it to text STOP would
+be texting whoever holds it next. `tests/test_consent_page.py` asserts it is absent.
 
 ## Deploy
 
